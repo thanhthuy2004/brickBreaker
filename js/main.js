@@ -1,7 +1,6 @@
 const cvs = document.getElementById("breakout");
 const ctx = cvs.getContext("2d");
 
-// ctx.lineWidth = 3;
 
 const WOOD_WIDTH = 100;
 const WOOD_MARGIN_BOTTOM = 20;
@@ -22,10 +21,8 @@ let rightArrow = false;
 
 const wood_Img = new Image();
 const wood_Img_vertical = new Image();
-const background = new Image();
 wood_Img.src = "img/paddle.jpg";
 wood_Img_vertical.src = "img/paddleOrther.jpg";
-background.src ="img/br.jpg";
 
 // SOUND
 const WALL_HIT = new Audio();
@@ -44,7 +41,8 @@ const BRICK_HIT = new Audio();
 BRICK_HIT.src = "sounds/brick_hit.mp3";
 
 function setBr() { // set background
-    ctx.drawImage(background, 0,0);
+    ctx.fillStyle = "#040404";
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
 }
 
 const wood = { // create wood
@@ -52,8 +50,7 @@ const wood = { // create wood
     y: cvs.height - WOOD_MARGIN_BOTTOM - WOOD_HEIGHT,
     width: WOOD_WIDTH,
     height: WOOD_HEIGHT,
-    // dx: 5
-    dx:10
+    dx: 5
 }
 
 function drawWood() { // draw wood
@@ -87,9 +84,9 @@ const ball = {  // create ball
     x: cvs.width / 2,
     y: wood.y - BALL_RADIUS,
     radius: BALL_RADIUS,
-    speed: 5,
-    dx: 4 * (Math.random() * 2 - 1),
-    dy: -4
+    speed: 4,
+    dx: 3 * (Math.random() * 2 - 1),
+    dy: -3
 }
 
 function drawBall() { //draw ball
@@ -112,8 +109,8 @@ function moveBall() { // move ball
 function resetBall() { // reset ball
     ball.x = cvs.width / 2;
     ball.y = wood.y - BALL_RADIUS;
-    ball.dx = 4 * (Math.random() * 2 - 1);
-    ball.dy = -4;
+    ball.dx = 3 * (Math.random() * 2 - 1);
+    ball.dy = -3;
 }
 
 function ballWallColl() { // ball and wall Collision
@@ -516,6 +513,26 @@ $("#start_btn").click(function () {  // method of start button
     $(".labelText").text("Now Level: "+ n);
     $("#play_again_btn").show();
 })
+
+// SELECT SOUND ELEMENT
+const soundElement  = document.getElementById("sound_icon");
+
+soundElement.addEventListener("click", audioManager);
+
+function audioManager(){
+    // CHANGE IMAGE SOUND_ON/OFF
+    let imgSrc = soundElement.getAttribute("src");
+    let SOUND_IMG = imgSrc == "img/SOUND_ON.png" ? "img/SOUND_OFF.png" : "img/SOUND_ON.png";
+
+    soundElement.setAttribute("src", SOUND_IMG);
+
+    // MUTE AND UNMUTE SOUNDS
+    WALL_HIT.muted = WALL_HIT.muted ? false : true;
+    PADDLE_HIT.muted = PADDLE_HIT.muted ? false : true;
+    BRICK_HIT.muted = BRICK_HIT.muted ? false : true;
+    WIN.muted = WIN.muted ? false : true;
+    LIFE_LOST.muted = LIFE_LOST.muted ? false : true;
+}
 
 
 
