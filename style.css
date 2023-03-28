@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Germania One', 'sans-serif';
+}
+.heading_board, .resultText{
+    color: #537FE7;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.resultText{
+    display: none;
+    color: #ff605c;
+}
+.container{
+    margin:  16px auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.sideBar{
+    width: 30%;
+    margin-left: 30px;
+    margin-top: 48px;
+}
+.cv{
+    width: 60%;
+    margin-left: 40px;
+}
+#breakout{
+    position: relative;
+    background-image: url("img/br.jpg");
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 5px 3px 7px #000000;
+}
+.alertText{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 48px;
+    margin-top: 48px;
+}
+.scoreImg{
+    width: 30px;
+    height: 30px;
+}
+.scoreDiv, .lifeDiv, .lvDiv{
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 8px;
+}
+.scoreNo{
+    margin-left: 12px;
+
+}
+
+.img{
+    width: 120px;
+    height: 80px;
+    margin: auto;
+    border-radius: 2px;
+}
+#play_again_btn{
+    background-image: url("img/replay.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 64%;
+    padding: 12px;
+    display: none;
+    margin: 54px 0 24px;
+    cursor: pointer;
+}
+#start_btn{
+    background-image: url("img/Start-Button.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    margin: 0 0 0 ;
+    cursor: pointer;
+}
+.gif{
+    width: 150px;
+    display: none;
+    margin: auto;
+}
+.levelForm, select, option, input{
+    font-size: 24px;
+}
+.levelForm{
+    text-align: center;
+}
+.labelText{
+    font-size: 24px;
+}
+
+

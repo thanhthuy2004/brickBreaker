@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ping Pong - BreakOut - 20130429</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Germania+One">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+   <div class="sideBar">
+       <h1 class="heading_board">BreakOut Game</h1>
+
+       <div class="alertText">
+           <div class="scoreDiv">
+               <img src="img/score.png" class="scoreImg">
+               <p id="score" class="scoreNo">0</p>
+           </div>
+           <div class="lvDiv">
+               <img src="img/level.png" class="scoreImg">
+               <p id="lv" class="scoreNo">0</p>
+           </div>
+           <div class="lifeDiv">
+               <img src="img/life.png" class="scoreImg">
+               <p id="live" class="scoreNo">0</p>
+           </div>
+       </div>
+       <h1 class="resultText">Game Over</h1>
+       <form class="levelForm">
+           <label class="labelText" for="level">Choose a level:</label>
+           <select name="level" id="level">
+               <option value="1" selected>Easy</option>
+               <option value="2" >Two Wood</option>
+               <option value="3">Matrix Wood</option>
+               <option value="4">Wall Dynamic Horizontal</option>
+               <option value="5">Wall Dynamic Vertical</option>
+               <option value="6">Reset Ball</option>
+           </select>
+           <br><br>
+       </form>
+       <div class="img">
+           <div id="play_again_btn"></div>
+           <div id="start_btn"></div>
+           <img src="img/cute.gif" class="gif">
+       </div>
+
+
+   </div>
+   <div class="cv"> <canvas id="breakout" width="600px" height="600px"></canvas></div>
+</div>
+
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
